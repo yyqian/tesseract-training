@@ -1,0 +1,1 @@
+docker run --rm -it -v /d:/mnt/d tesseract bash
