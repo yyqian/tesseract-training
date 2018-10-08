@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
     cout << "Generating..." << endl;
     ofstream fz_hei_ofs("training_text/date.txt");
     ofstream times_bold_ofs("training_text/sn.txt");
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 5000; ++i) {
         fz_hei_ofs << rand_iss_date() << endl;
         times_bold_ofs << rand_iss_num() << endl;
         times_bold_ofs << rand_apno() << endl;

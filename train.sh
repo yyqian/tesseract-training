@@ -17,25 +17,25 @@ rm -rf output && mkdir -p output \
 && ./a.out $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && mv tmp.txt $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && tesseract $TRAIN_LANG.$TRAIN_FONT.exp0.tif $TRAIN_LANG.$TRAIN_FONT.exp0 nobatch box.train \
-&& echo $TRAIN_FONT" 0 0 0 0 0" >> font_properties \
-&& TRAIN_FONT=timesb \
+&& echo $TRAIN_FONT" 0 0 0 1 0" >> font_properties \
+&& TRAIN_FONT=timesbd \
 && text2image --text=$TRAIN_INPUT --outputbase=$TRAIN_LANG.$TRAIN_FONT.exp0 --fonts_dir=$TRAIN_FONT_DIR --font='Times New Roman, Bold' --ptsize=$PTSIZE --resolution=$RESOLUTION \
 && ./a.out $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && mv tmp.txt $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && tesseract $TRAIN_LANG.$TRAIN_FONT.exp0.tif $TRAIN_LANG.$TRAIN_FONT.exp0 nobatch box.train \
-&& echo $TRAIN_FONT" 0 0 0 0 0" >> font_properties \
+&& echo $TRAIN_FONT" 0 1 0 1 0" >> font_properties \
 && TRAIN_FONT=arial \
 && text2image --text=$TRAIN_INPUT --outputbase=$TRAIN_LANG.$TRAIN_FONT.exp0 --fonts_dir=$TRAIN_FONT_DIR --font='Arial' --ptsize=$PTSIZE --resolution=$RESOLUTION \
 && ./a.out $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && mv tmp.txt $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && tesseract $TRAIN_LANG.$TRAIN_FONT.exp0.tif $TRAIN_LANG.$TRAIN_FONT.exp0 nobatch box.train \
 && echo $TRAIN_FONT" 0 0 0 0 0" >> font_properties \
-&& TRAIN_FONT=arialb \
+&& TRAIN_FONT=arialbd \
 && text2image --text=$TRAIN_INPUT --outputbase=$TRAIN_LANG.$TRAIN_FONT.exp0 --fonts_dir=$TRAIN_FONT_DIR --font='Arial Bold' --ptsize=$PTSIZE --resolution=$RESOLUTION \
 && ./a.out $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && mv tmp.txt $TRAIN_LANG.$TRAIN_FONT.exp0.box \
 && tesseract $TRAIN_LANG.$TRAIN_FONT.exp0.tif $TRAIN_LANG.$TRAIN_FONT.exp0 nobatch box.train \
-&& echo $TRAIN_FONT" 0 0 0 0 0" >> font_properties \
+&& echo $TRAIN_FONT" 0 1 0 0 0" >> font_properties \
 && unicharset_extractor *.box \
 && mftraining -F font_properties -U unicharset -O $TRAIN_LANG.unicharset *.tr \
 && cntraining *.tr \
