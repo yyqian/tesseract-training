@@ -1,0 +1,1 @@
+docker build -t tesseract-ubuntu -f Dockerfile.ubuntu .

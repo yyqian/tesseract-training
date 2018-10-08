@@ -1,0 +1,1 @@
+g++ generate.cpp && ./a.out
